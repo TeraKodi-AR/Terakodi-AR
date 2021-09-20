@@ -1,3 +1,3 @@
 # TeraKodi-AR
 
-Juan Diego Garcia
+Juan Diego Garcia, Santiago Posada
