@@ -1,5 +1,5 @@
-# Responsive Login SignIn SignUp
+# Inicio de sesión y Registro Responsivo
 ## [Basado en:](https://youtu.be/aHA50b0jLCo)
-### Responsive Login SignIn SignUp
-responsive login and registration form usando Html, Css y JavaScript.
+### Inicio de sesión y Registro Responsivo
+Formulario de Inicio de sesión y registro responsivo usando Html, Css y JavaScript.
 
