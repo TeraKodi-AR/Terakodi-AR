@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # TeraKodi-AR
 
 ## EQUIPO DE TRABAJO CONFORMADO POR:
