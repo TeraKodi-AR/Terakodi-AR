@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # TeraKodi-AR
 
 ## EQUIPO DE TRABAJO CONFORMADO POR:
@@ -16,3 +17,11 @@
 ### ADMINISTRADOR de DB: Victor Manuel Realpe
 ### PRODUCT OWNER: Santiago Posada
 ### DESARROLLADOR: Faber Stiven Santa
+=======
+# Inicio de sesión y Registro Responsivo
+## [Basado en los videos de Bedimcode:](https://www.youtube.com/channel/UCgkDs77BoEhMIgRUB4MKrtQ)
+### Inicio de sesión y Registro Responsivo
+Formulario de Inicio de sesión y registro responsivo usando Html, Css y JavaScript.
+
+Haciendo cumplimiento de la historia de usuario HU_005
+>>>>>>> 740cf01c2f0f0e34c2a16cdf08e98013a0139f3b
