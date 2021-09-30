@@ -5,4 +5,4 @@ Formulario de Inicio de sesión y registro responsivo usando Html, Css y JavaScr
 
 Haciendo cumplimiento de la historia de usuario HU_005
 
-## Juan Diego García Castaño
+## Juan Diego García Castaño - Scrum Master
