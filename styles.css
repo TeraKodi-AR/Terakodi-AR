@@ -17,11 +17,28 @@ body{
     grid-column-start: 1;
     grid-column-end: 5;
 
-    background: rgb(47, 1, 255);
+    background: rgb(6, 134, 219);
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
     font-size: 1.9em;
+}
+
+.header, .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header{
+    font-size: 1.5em;
+    font-weight: bold;  
+}
+
+.item{
+    padding: 10px;
+    font-size: 1.2em;
+
 }
