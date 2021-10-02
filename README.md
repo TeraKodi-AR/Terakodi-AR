@@ -1,6 +1,6 @@
 # TeraKodi-AR
 
-## EQUIPO DE TRABAJO CONFORMADO POR:
+## EQUIPO para el desarrollo de las HU:
 ### Victor Manuel Realpe
 ### Faber Stiven Santa
 
