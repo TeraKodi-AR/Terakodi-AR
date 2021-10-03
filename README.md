@@ -5,6 +5,7 @@
 ### Se agregan estilos
 ### se agregan los ultimos estilos
 ### Create README.md
+### Se actualiza la tabla a ingles y se ajusta el tamaño
 
 # Historias de usuario 
 
