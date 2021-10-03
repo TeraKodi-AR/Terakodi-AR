@@ -1,8 +1,12 @@
-# Inicio de sesión y Registro Responsivo
+# Inicio De Sesión Responsivo
 ## [Basado en los videos de Bedimcode:](https://www.youtube.com/channel/UCgkDs77BoEhMIgRUB4MKrtQ)
-### Inicio de sesión y Registro Responsivo
-Formulario de Inicio de sesión y registro responsivo usando Html, Css y JavaScript.
+### Inicio De Sesión Responsivo
 
+Formulario de Inicio De Sesión Responsivo usando Html, Css y JavaScript.
 Haciendo cumplimiento de la historia de usuario HU_005
+
+## Creación de panel principal
+
+Se creo el Dashboard, lugar desde donde se puede acceder a los diferentes paneles
 
 ## Juan Diego García Castaño - Scrum Master
