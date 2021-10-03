@@ -16,3 +16,5 @@
 ### HU_011
 ### HU_012
 
+
+## Juan Diego García Castaño - Scrum Master
