@@ -1,0 +1,128 @@
+
+
+body,html,.container{
+	height: 100%;
+	max-width: 100% !important;
+	margin: 0;
+	padding: 0;
+}
+
+.container{
+
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+header{
+	width: 100%;
+	height: 13%;
+	background: #412f2f;
+	font-family: arial;
+	font-weight: bold;
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	font-size: 7%;
+	
+}
+
+h1{
+
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 1%;
+}
+
+
+
+
+.modal{
+
+	
+	margin-top: 5%;
+}
+.modal-dialog{
+
+ max-width: 1000px !important
+
+}
+
+table{
+	
+	width: 90% !important;
+	margin-top: 3%;
+}
+
+
+#botonEditar{
+
+	display: none;
+
+
+}
+
+#pencil{
+
+	color: #0D6BF1 !important;
+	font-size: 30px !important;
+}
+
+#trash{
+
+	color: red;
+	font-size: 30px !important;
+}
+
+.botonera{
+
+	display: flex;
+} 
+
+#labelMail{
+
+	margin-top: 19px;
+}
+
+
+.modal-footer{
+
+	display: flex;
+	justify-content: space-between;
+}
+
+#botonCancelar{
+
+	margin-right: 1% !important;
+}
+
+#tableButtons{
+
+	display: flex;
+	justify-content: flex-end;
+	width: 90%
+
+}
+
+#pagination{
+
+	margin-right: 35%;
+	display: flex;
+	align-items: center;
+}
+
+#prevPag{
+
+	margin-right: 20px;
+}
+
+#nextPag{
+
+	margin-left: 20px;
+}
+
+
+
