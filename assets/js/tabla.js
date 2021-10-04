@@ -117,6 +117,7 @@ function guardarUsuario() {
         usuario.mail = document.getElementById('mail').value
         usuario.telefono = document.getElementById('telefono').value
         usuario.rol = document.getElementById('rol').value
+        usuario.estado = $("input[name='estado']:checked").val()
 
 
         var usuarios = [];
@@ -175,7 +176,7 @@ function tablaDeUsuarios() {
             for (var i = 0; i <= table.length; i++) {
 
 
-                bodyTable.innerHTML += "<tr id=" + i + "><th>" + (i + 1) + "</th><th>" + table[i].nombre + "</th><th>" + table[i].edad + " años" + "</th><th>" + table[i].sexo + "</th><th>" + table[i].mail + "</th><th>" + table[i].telefono + "</th><th>" + table[i].rol + "</th><th><i data-editar=" + i + " id='pencil' class='fa fa-pencil-square-o' onclick = 'editarUsuario()'></i></th><th><i data-borrar=" + i + " id='trash' class='fa fa-trash-o' onclick = 'borrarUsuario()'></i></th></tr>"
+                bodyTable.innerHTML += "<tr id=" + i + "><th>" + (i + 1) + "</th><th>" + table[i].nombre + "</th><th>" + table[i].edad + " años" + "</th><th>" + table[i].sexo + "</th><th>" + table[i].mail + "</th><th>" + table[i].telefono + "</th><th>" + table[i].rol + "</th><th>" + table[i].estado + "</th><th><i data-editar=" + i + " id='pencil' class='fa fa-pencil-square-o' onclick = 'editarUsuario()'></i></th><th><i data-borrar=" + i + " id='trash' class='fa fa-trash-o' onclick = 'borrarUsuario()'></i></th></tr>"
 
             }
 
@@ -224,6 +225,7 @@ function editarUsuario() {
     $("#fecha").val(usuarios[usuario].fechaNacimiento)
     $("#" + usuarios[usuario].sexo).attr("checked", true)
     $("#mail").val(usuarios[usuario].mail)
+    $("#telefono").val(usuarios[usuario].telefono)
     $("#botonAgregar").click()
     $("#botonGuardar").css("display", "none")
     $("#botonEditar").css("display", "block")
@@ -252,6 +254,9 @@ function confirmarEdicion() {
         usuario.fechaNacimiento = $("#fecha").val()
         usuario.sexo = $("input[name='sexo']:checked").val()
         usuario.mail = $("#mail").val()
+        usuario.telefono = $("#telefono").val()
+        usuario.rol = $("#rol").val()
+        usuario.estado = $("input[name='estado']:checked").val()
 
         var usuarios = JSON.parse(localStorage.getItem('session'));
 
