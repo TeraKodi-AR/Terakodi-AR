@@ -115,6 +115,8 @@ function guardarUsuario() {
         usuario.fechaNacimiento = document.getElementById('fecha').value
         usuario.sexo = $("input[name='sexo']:checked").val()
         usuario.mail = document.getElementById('mail').value
+        usuario.telefono = document.getElementById('telefono').value
+        usuario.rol = document.getElementById('rol').value
 
 
         var usuarios = [];
@@ -173,7 +175,7 @@ function tablaDeUsuarios() {
             for (var i = 0; i <= table.length; i++) {
 
 
-                bodyTable.innerHTML += "<tr id=" + i + "><th>" + (i + 1) + "</th><th>" + table[i].nombre + "</th><th>" + table[i].edad + " años" + "</th><th>" + table[i].sexo + "</th><th>" + table[i].mail + "</th><th><i data-editar=" + i + " id='pencil' class='fa fa-pencil-square-o' onclick = 'editarUsuario()'></i></th><th><i data-borrar=" + i + " id='trash' class='fa fa-trash-o' onclick = 'borrarUsuario()'></i></th></tr>"
+                bodyTable.innerHTML += "<tr id=" + i + "><th>" + (i + 1) + "</th><th>" + table[i].nombre + "</th><th>" + table[i].edad + " años" + "</th><th>" + table[i].sexo + "</th><th>" + table[i].mail + "</th><th>" + table[i].telefono + "</th><th>" + table[i].rol + "</th><th><i data-editar=" + i + " id='pencil' class='fa fa-pencil-square-o' onclick = 'editarUsuario()'></i></th><th><i data-borrar=" + i + " id='trash' class='fa fa-trash-o' onclick = 'borrarUsuario()'></i></th></tr>"
 
             }
 
