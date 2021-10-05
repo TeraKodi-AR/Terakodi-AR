@@ -84,3 +84,12 @@ a.active{
     background: #035bc0;
     transition: .5s;
 }
+
+button{
+    font-family: var(--body-font);
+    box-shadow: 5px;
+}
+.search{
+    font-family: var(--body-font);
+    margin-left: 25%;
+}
