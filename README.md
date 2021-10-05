@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Terakodi-AR
 ## Rama Santiago Posada
 ### Se agrego una tabla de prueba y se crearon los estilos
@@ -16,6 +17,3 @@
 ### HU_010
 ### HU_011
 ### HU_012
-
-
-## Juan Diego García Castaño - Scrum Master
