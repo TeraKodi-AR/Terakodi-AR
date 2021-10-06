@@ -122,6 +122,23 @@ table{
 
 	margin-left: 20px;
 }
+.buscar{
+	position: absolute;
+	padding: 1px;
+	right: 15%;
+	margin: 5px;
+	top: 3%;
+}
+.buscar input{
+	width: 240px;
+	height: 40px;
+	color: black;
+	font-size: 18px;
+	padding: 0 20px;
+	outline: none;
+	border: 1px solid rgb(151, 144, 144);
+	border-radius: 30px;
+}
 
 
 
