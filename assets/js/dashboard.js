@@ -1,21 +1,21 @@
-/*==================== SHOW NAVBAR ====================*/
+/*==================== Muestra el NavBar ====================*/
 const showMenu = (headerToggle, navbarId) => {
   const toggleBtn = document.getElementById(headerToggle),
     nav = document.getElementById(navbarId);
 
-  // Validate that variables exist
+  // Valida si las variables existen
   if (headerToggle && navbarId) {
     toggleBtn.addEventListener("click", () => {
-      // We add the show-menu class to the div tag with the nav__menu class
+      // Agregamos la clase show-menu a la etiqueta div con la clase nav__menu
       nav.classList.toggle("show-menu");
-      // change icon
+      // Cambio de icono
       toggleBtn.classList.toggle("bx-x");
     });
   }
 };
 showMenu("header-toggle", "navbar");
 
-/*==================== LINK ACTIVE ====================*/
+/*==================== LINK ACTIVO ====================*/
 const linkColor = document.querySelectorAll(".nav__link");
 
 function colorLink() {
