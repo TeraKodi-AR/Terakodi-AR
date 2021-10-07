@@ -1,0 +1,60 @@
+.navbar {
+    display: flex;
+    background-color: rgb(201, 184, 214);
+    margin: 0px;}
+
+     
+body {
+  margin: 0px;
+}
+
+.bordeup {
+    display: flex;
+    background-color: rgb(138, 28, 223);
+    box-shadow: 1px 1px black;
+    margin: 0px;
+    padding: 20px;
+}
+
+table {
+  width: 90%;
+  border: 2px solid rgb(141, 22, 141);
+  border-collapse: collapse;
+  position: absolute;top: 40%;
+  position: absolute;right: 9%;
+  
+}
+td {
+  
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid rgb(109, 21, 136);
+  height:1.2cm;
+  
+}
+
+th {
+  width: 78px;
+  background: rgb(115, 7, 179);
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid rgb(109, 21, 136);
+}
+
+.boton_n {
+  position: absolute;top: 30%;
+  position: absolute;right: 30%;
+
+}
+
+.boton_b {
+  position: absolute;top: 30%;
+  position: absolute;right: 25%;
+
+}
+
+.buscar {
+  position: absolute;top: 30%;
+  position: absolute;right: 10%;
+}
+

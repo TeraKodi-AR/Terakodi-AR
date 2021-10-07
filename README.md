@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Terakodi-AR
 ## Rama Santiago Posada
 ### Se agrego una tabla de prueba y se crearon los estilos
@@ -16,4 +17,5 @@
 ### HU_009
 ### HU_010
 ### HU_011
-### HU_012
+=======
+# Gestion de Usuarios
