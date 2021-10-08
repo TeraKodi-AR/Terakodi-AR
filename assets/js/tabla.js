@@ -1,58 +1,58 @@
 function validarProducto() {
 
 
-    var productoOK = false
-    var quantityOK = false
-    var codeOK = false
+    var productoOK = false;
+    var quantityOK = false;
+    var codeOK = false;
 
     var validarProducto = /[a-z,A-Z,0-9]{1,20}$/;
-    var producto = document.getElementById('producto').value
+    var producto = document.getElementById('producto').value;
 
     if (validarProducto.test(producto)) {
 
-        var producto = document.getElementById('producto').value
-        productoOK = true
-        document.getElementById("error").innerHTML = ""
+        producto = document.getElementById('producto').value;
+        productoOK = true;
+        document.getElementById("error").innerHTML = "";
 
     } else {
-        document.getElementById("error").innerHTML = " *The product need to have 1 letter minimun"
+        document.getElementById("error").innerHTML = " *The product need to have 1 letter minimun";
     }
 
-    var validarQuantity = /[0-9]{1,5})$/
-    var quantity = document.getElementById('number').value
+    var validarQuantity = /[0-9]{1,5}$/;
+    var quantity = document.getElementById('quantity').value;
 
     if (validarQuantity.test(quantity)) {
-        document.getElementById("error").innerHTML += ""
+        document.getElementById("error").innerHTML += "";
 
         quantityOK = true;
 
     } else {
 
-        document.getElementById("error").innerHTML += " *You need to enter a number"
+        document.getElementById("error").innerHTML += " *You need to enter a number";
     }
 
     var validarCodigo = /[a-z,A-Z,0-9]{1,20}$/;
-    var code = document.getElementById('code').value
+    var code = document.getElementById('code').value;
 
     if (validarCodigo.test(code)) {
 
-        var code = document.getElementById('code').value
-        codeOK = true
-        document.getElementById("error").innerHTML = ""
+        var code = document.getElementById('code').value;
+        codeOK = true;
+        document.getElementById("error").innerHTML = "";
 
     } else {
-        document.getElementById("error").innerHTML = " *The code need to have 1 character minimun"
+        document.getElementById("error").innerHTML = " *The code need to have 1 character minimun";
     }
 
 
     if (productoOK == true && quantityOK == true && codeOK == true) {
 
-        sessionStorage.setItem("OK", "ok")
-        $('#close').click()
+        sessionStorage.setItem("OK", "ok");
+        $('#close').click();
 
     } else {
 
-        sessionStorage.setItem("OK", "no ok")
+        sessionStorage.setItem("OK", "no ok");
 
     }
 
@@ -67,9 +67,9 @@ function validarProducto() {
 function guardarProducto() {
 
 
-    validarProducto()
+    validarProducto();
 
-    var OK = sessionStorage.getItem("OK")
+    var OK = sessionStorage.getItem("OK");
 
 
 
@@ -79,9 +79,9 @@ function guardarProducto() {
 
 
         var venta = new Object();
-        venta.producto = document.getElementById('producto').value
-        venta.quantity = document.getElementById('quantity').value
-        venta.code = document.getElementById('code').value
+        venta.producto = document.getElementById('producto').value;
+        venta.quantity = document.getElementById('quantity').value;
+        venta.code = document.getElementById('code').value;
 
 
 
@@ -95,7 +95,7 @@ function guardarProducto() {
         localStorage.setItem('session', JSON.stringify(ventas));
 
 
-        tablaDeVentas()
+        tablaDeVentas();
 
 
 
@@ -108,24 +108,24 @@ function guardarProducto() {
 
 function tablaDeVentas() {
 
-	document.getElementById("pagination").style.visibility = "hidden"
+	document.getElementById("pagination").style.visibility = "hidden";
 
     if (localStorage.getItem('session') == null) {
 
-        var ventas = []
+        var ventas = [];
 
-        localStorage.setItem('session', JSON.stringify(ventas))
+        localStorage.setItem('session', JSON.stringify(ventas));
 
     }
 
-    limpiarForm()
+    limpiarForm();
 
     var table = JSON.parse(localStorage.getItem('session'));
-    var bodyTable = document.getElementById('tableBody')
+    var bodyTable = document.getElementById('tableBody');
 
 
 
-    bodyTable.innerHTML = ""
+    bodyTable.innerHTML = "";
 
     if (table != "") {
 
@@ -134,14 +134,14 @@ function tablaDeVentas() {
 
            
 
-            paginarTabla()
+            paginarTabla();
 
         } else {
 
             for (var i = 0; i <= table.length; i++) {
 
 
-                bodyTable.innerHTML += "<tr id=" + i + "><th>" + (i + 1) + "</th><th>" + table[i].producto + "</th><th>" + table[i].quantity + "</th><th>" + table[i].code + "</th><th><i data-editar=" + i + " id='pencil' class='fa fa-pencil-square-o' onclick = 'editarUsuario()'></i></th><th><i data-borrar=" + i + " id='trash' class='fa fa-trash-o' onclick = 'borrarUsuario()'></i></th></tr>"
+                bodyTable.innerHTML += "<tr id=" + i + "><th>" + (i + 1) + "</th><th>" + table[i].producto + "</th><th>" + table[i].quantity + "</th><th>" + table[i].code + "</th><th><i data-editar=" + i + " id='pencil' class='fa fa-pencil-square-o' onclick = 'editarUsuario()'></i></th><th><i data-borrar=" + i + " id='trash' class='fa fa-trash-o' onclick = 'borrarUsuario()'></i></th></tr>";
 
             }
 
@@ -157,19 +157,19 @@ function tablaDeVentas() {
 }
 
 function borrarUsuario() {
-var usuarios = JSON.parse(localStorage.getItem('session'));
-    var usuario = event.currentTarget.dataset.borrar
-    var tr = document.getElementById(usuario)
+var ventas = JSON.parse(localStorage.getItem('session'));
+    var venta = event.currentTarget.dataset.borrar;
+    var tr = document.getElementById(venta);
 	 
-    var opcion = confirm("El usuario seleccionado sera eliminado");
+    var opcion = confirm("The selected sale will be deleted");
     if (opcion == true) {
-          usuarios.splice(usuario, 1)
+          ventas.splice(venta, 1);
 
-    localStorage.setItem('session', JSON.stringify(usuarios));
+    localStorage.setItem('session', JSON.stringify(ventas));
 
-    tr.style.display = 'none'
+    tr.style.display = 'none';
 
-    tablaDeUsuarios()
+    tablaDeVentas();
 	}
 
     
@@ -179,22 +179,20 @@ var usuarios = JSON.parse(localStorage.getItem('session'));
 }
 
 
-function editarUsuario() {
+function editarVenta() {
 
 
-    var usuarios = JSON.parse(localStorage.getItem('session'));
-    var usuario = event.currentTarget.dataset.editar
-    var tr = document.getElementById(usuario)
+    var ventas = JSON.parse(localStorage.getItem('session'));
+    var venta = event.currentTarget.dataset.editar;
+    var tr = document.getElementById(venta);
 
-    $("#nombre").val(usuarios[usuario].nombre)
-    $("#fecha").val(usuarios[usuario].fechaNacimiento)
-    $("#" + usuarios[usuario].sexo).attr("checked", true)
-    $("#mail").val(usuarios[usuario].mail)
-    $("#telefono").val(usuarios[usuario].telefono)
-    $("#botonAgregar").click()
-    $("#botonGuardar").css("display", "none")
-    $("#botonEditar").css("display", "block")
-    sessionStorage.setItem("usuarioEditado", usuario)
+    $("#producto").val(ventas[venta].producto);
+    $("#quantity").val(ventas[venta].quantity);
+    $("#telefono").val(ventas[venta].code);
+    $("#botonAgregar").click();
+    $("#botonGuardar").css("display", "none");
+    $("#botonEditar").css("display", "block");
+    sessionStorage.setItem("ventaEditado", venta);
 
 
 }
@@ -203,35 +201,30 @@ function confirmarEdicion() {
 
 
 
-    validarUsuario()
+    validarProducto();
 
-    var OK = sessionStorage.getItem("OK")
+    var OK = sessionStorage.getItem("OK");
 
     if (OK == "ok") {
-        var index = sessionStorage.getItem("usuarioEditado")
+        var index = sessionStorage.getItem("ventaEditado");
 
 
-        validarUsuario()
+        validarProducto()
 
-        var usuario = new Object();
-        usuario.nombre = $("#nombre").val()
-        usuario.edad = sessionStorage.getItem("edad")
-        usuario.fechaNacimiento = $("#fecha").val()
-        usuario.sexo = $("input[name='sexo']:checked").val()
-        usuario.mail = $("#mail").val()
-        usuario.telefono = $("#telefono").val()
-        usuario.rol = $("#rol").val()
-        usuario.estado = $("input[name='estado']:checked").val()
+        var venta = new Object();
+        venta.producto = $("#producto").val();
+        venta.quantity = $("#quantity").val();
+        venta.code = $("#code").val();
 
-        var usuarios = JSON.parse(localStorage.getItem('session'));
+        var ventas = JSON.parse(localStorage.getItem('session'));
 
 
-        usuarios.splice(index, 1, usuario)
+        ventas.splice(index, 1, venta);
 
-        localStorage.setItem('session', JSON.stringify(usuarios))
+        localStorage.setItem('session', JSON.stringify(ventas));
 
 
-        tablaDeUsuarios()
+        tablaDeVentas();
 
 
 
@@ -243,11 +236,11 @@ function confirmarEdicion() {
 function paginarTabla() {
 
 
-	document.getElementById("pagination").style.visibility = "visible"
+	document.getElementById("pagination").style.visibility = "visible";
 
-    var bodyTable = document.getElementById('tableBody')
+    var bodyTable = document.getElementById('tableBody');
 
-    bodyTable.innerHTML = ""
+    bodyTable.innerHTML = "";
 
     var table = JSON.parse(localStorage.getItem('session'));
 
@@ -266,7 +259,7 @@ function paginarTabla() {
     for (var i = 0; i <= paginatedTable.length; i++) {
 
 
-        bodyTable.innerHTML += "<tr id=" + i + "><th>" + (i + 1) + "</th><th>" + table[i].producto + "</th><th>" + table[i].quantity + "</th><th>" + table[i].code + "</th><th><i data-editar=" + i + " id='pencil' class='fa fa-pencil-square-o' onclick = 'editarUsuario()'></i></th><th><i data-borrar=" + i + " id='trash' class='fa fa-trash-o' onclick = 'borrarUsuario()'></i></th></tr>"
+        bodyTable.innerHTML += "<tr id=" + i + "><th>" + (i + 1) + "</th><th>" + table[i].producto + "</th><th>" + table[i].quantity + "</th><th>" + table[i].code + "</th><th><i data-editar=" + i + " id='pencil' class='fa fa-pencil-square-o' onclick = 'editarUsuario()'></i></th><th><i data-borrar=" + i + " id='trash' class='fa fa-trash-o' onclick = 'borrarUsuario()'></i></th></tr>";
 
     }
 
@@ -290,25 +283,25 @@ if ( currentPage < totalPages){
 
 	document.getElementById("prevPag").disabled = false;
 
-		 var inicio = (currentPage) * 5
-	var final =  inicio + 5;
+		 var inicio = (currentPage) * 5;
+	     var final =  inicio + 5;
 
 
-	   var bodyTable = document.getElementById('tableBody')
+	   var bodyTable = document.getElementById('tableBody');
 
-    bodyTable.innerHTML = ""
+    bodyTable.innerHTML = "";
 var paginatedTable = table.slice(inicio, final);
 
 	      currentPage ++
 
-	 document.getElementById("pagNum").innerHTML = currentPage
+	 document.getElementById("pagNum").innerHTML = currentPage;
 
 
  
     for (var i = 0; i <= paginatedTable.length; i++) {
 
 
-        bodyTable.innerHTML += "<tr id=" + i + "><th>" + ((final + i) - 4) + "</th><th>" + paginatedTable[i].nombre + "</th><th>" + paginatedTable[i].edad + " años" + "</th><th>" + paginatedTable[i].sexo + "</th><th>" + paginatedTable[i].mail + "</th><th><i data-editar=" + i + " id='pencil' class='fa fa-pencil-square-o' onclick = 'editarUsuario()'></i></th><th><i data-borrar=" + i + " id='trash' class='fa fa-trash-o' onclick = 'borrarUsuario()'></i></th></tr>"
+        bodyTable.innerHTML += "<tr id=" + i + "><th>" + ((final + i) - 4) + "</th><th>" + paginatedTable[i].nombre + "</th><th>" + paginatedTable[i].edad + " años" + "</th><th>" + paginatedTable[i].sexo + "</th><th>" + paginatedTable[i].mail + "</th><th><i data-editar=" + i + " id='pencil' class='fa fa-pencil-square-o' onclick = 'editarUsuario()'></i></th><th><i data-borrar=" + i + " id='trash' class='fa fa-trash-o' onclick = 'borrarUsuario()'></i></th></tr>";
 
     }
 
@@ -338,31 +331,31 @@ function prevPage(){
 
 if ( currentPage > 1){
 
-		 var usuarios = (currentPage) * 5
-	var final = usuarios - 5
+		 var ventas = (currentPage) * 5;
+	var final = ventas - 5;
 	var inicio = final - 5 ;
 	
 
 
 	   var bodyTable = document.getElementById('tableBody')
 
-    bodyTable.innerHTML = ""
+    bodyTable.innerHTML = "";
 
 
 var paginatedTable = table.slice(inicio, final);
 
 
 
-	      currentPage --
+	      currentPage --;
 
-	 document.getElementById("pagNum").innerHTML = currentPage
+	 document.getElementById("pagNum").innerHTML = currentPage;
 
 
  
     for (var i = 0; i <= paginatedTable.length; i++) {
 
 
-        bodyTable.innerHTML += "<tr id=" + i + "><th>" + ((final - 4) + i) + "</th><th>" + paginatedTable[i].nombre + "</th><th>" + paginatedTable[i].edad + " años" + "</th><th>" + paginatedTable[i].sexo + "</th><th>" + paginatedTable[i].mail + "</th><th><i data-editar=" + i + " id='pencil' class='fa fa-pencil-square-o' onclick = 'editarUsuario()'></i></th><th><i data-borrar=" + i + " id='trash' class='fa fa-trash-o' onclick = 'borrarUsuario()'></i></th></tr>"
+        bodyTable.innerHTML += "<tr id=" + i + "><th>" + ((final - 4) + i) + "</th><th>" + paginatedTable[i].nombre + "</th><th>" + paginatedTable[i].edad + " años" + "</th><th>" + paginatedTable[i].sexo + "</th><th>" + paginatedTable[i].mail + "</th><th><i data-editar=" + i + " id='pencil' class='fa fa-pencil-square-o' onclick = 'editarUsuario()'></i></th><th><i data-borrar=" + i + " id='trash' class='fa fa-trash-o' onclick = 'borrarUsuario()'></i></th></tr>";
 
     }
 
@@ -385,8 +378,8 @@ var paginatedTable = table.slice(inicio, final);
 
 function limpiarForm() {
 
-    $("#producto").val("")
-    $("#quantity").val("")
-    $("#code").val("")
+    $("#producto").val("");
+    $("#quantity").val("");
+    $("#code").val("");
 
 }

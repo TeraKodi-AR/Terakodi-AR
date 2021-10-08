@@ -45,7 +45,7 @@
                   <div class="modal-body">
                      <form>
                         <div class="form-group">
-                           <label for="producto" class="col-form-label">Producto</label>
+                           <label for="product" class="col-form-label">Producto</label>
                            <input type="text" class="form-control" id="producto" placeholder="Enter product">
                         </div>
                         <div class="form-group">
@@ -53,8 +53,8 @@
                            <input type="number" class="form-control" id="quantity" placeholder="Enter quantity">
                         </div>
                         <div class="form-group">
-                           <label for="Code" class="col-form-label">Code</label>
-                           <input type="number" class="form-control" id="code" placeholder="Enter code">
+                           <label for="code" class="col-form-label">Code</label>
+                           <input type="text" class="form-control" id="code" placeholder="Enter code">
                         </div>
                      </form>
                   </div>
@@ -72,6 +72,7 @@
          <table class="table table-striped">
             <thead class="thead">
                <tr>
+                  <th scope="col">#</th>
                   <th scope="col">Product</th>
                   <th scope="col">Quantity</th>
                   <th scope="col">Code</th>
@@ -90,7 +91,7 @@
                <button class="page-item" id="nextPag" onclick="nextPage()" >></button>
             </div>
             <button type="button" id="botonAgregar" onclick=" document.getElementById('error').innerHTML = ' '"  class="btn btn-success" data-toggle="modal" data-target="#ingresarUsuario">
-            CARGAR USUARIO
+            CARGAR VENTA
             </button>
          </div>
       </div>
