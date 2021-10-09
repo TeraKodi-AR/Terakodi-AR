@@ -22,13 +22,15 @@
    <body onload="tablaDeVentas()">
       <header>
          <h1>
-            Gestion de ventas
+            Sales
          </h1>
+         <ul>
+            <li><a class="active" href="./dashboard.html">Return</a></li>
+        </ul>
        </header>
        <div class="buscar">
           <input type="text" placeholder="Buscar" required>
           <div class="btnbuscar">
-             
           </div>
        </div>
       <div class="container">
@@ -90,7 +92,7 @@
                <div id="totalPag"></div>
                <button class="page-item" id="nextPag" onclick="nextPage()" >></button>
             </div>
-            <button type="button" id="botonAgregar" onclick=" document.getElementById('error').innerHTML = ' '"  class="btn btn-success" data-toggle="modal" data-target="#ingresarUsuario">
+            <button type="button" id="botonAgregar" onclick=" document.getElementById('error').innerHTML = ' '"  class="cargarv" data-toggle="modal" data-target="#ingresarUsuario">
             CARGAR VENTA
             </button>
          </div>

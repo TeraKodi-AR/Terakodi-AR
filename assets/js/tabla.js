@@ -55,10 +55,6 @@ function validarProducto() {
         sessionStorage.setItem("OK", "no ok");
 
     }
-
-
-
-
 }
 
 
@@ -66,24 +62,16 @@ function validarProducto() {
 
 function guardarProducto() {
 
-
     validarProducto();
 
     var OK = sessionStorage.getItem("OK");
 
-
-
-
     if (OK == "ok") {
-
-
 
         var venta = new Object();
         venta.producto = document.getElementById('producto').value;
         venta.quantity = document.getElementById('quantity').value;
         venta.code = document.getElementById('code').value;
-
-
 
         var ventas = [];
 
@@ -91,18 +79,11 @@ function guardarProducto() {
 
         ventas.push(venta);
 
-
         localStorage.setItem('session', JSON.stringify(ventas));
-
 
         tablaDeVentas();
 
-
-
     }
-
-
-
 
 }
 
@@ -123,25 +104,19 @@ function tablaDeVentas() {
     var table = JSON.parse(localStorage.getItem('session'));
     var bodyTable = document.getElementById('tableBody');
 
-
-
     bodyTable.innerHTML = "";
 
     if (table != "") {
 
-
         if (table.length > 5) {
-
-           
 
             paginarTabla();
 
         } else {
 
-            for (var i = 0; i <= table.length; i++) {
+            for (var i = 0; i < table.length; i++) {
 
-
-                bodyTable.innerHTML += "<tr id=" + i + "><th>" + (i + 1) + "</th><th>" + table[i].producto + "</th><th>" + table[i].quantity + "</th><th>" + table[i].code + "</th><th><i data-editar=" + i + " id='pencil' class='fa fa-pencil-square-o' onclick = 'editarUsuario()'></i></th><th><i data-borrar=" + i + " id='trash' class='fa fa-trash-o' onclick = 'borrarUsuario()'></i></th></tr>";
+                bodyTable.innerHTML += "<tr id=" + i + "><th>" + (i + 1) + "</th><th>" + table[i].producto + "</th><th>" + table[i].quantity + "</th><th>" + table[i].code + "</th><th><i data-editar=" + i + " id='pencil' class='fa fa-pencil-square-o' onclick = 'editarVenta()'></i></th><th><i data-borrar=" + i + " id='trash' class='fa fa-trash-o' onclick = 'borrarVenta()'></i></th></tr>";
 
             }
 
@@ -149,14 +124,9 @@ function tablaDeVentas() {
 
     }
 
-
-
-
-
-
 }
 
-function borrarUsuario() {
+function borrarVenta() {
 var ventas = JSON.parse(localStorage.getItem('session'));
     var venta = event.currentTarget.dataset.borrar;
     var tr = document.getElementById(venta);
@@ -172,10 +142,6 @@ var ventas = JSON.parse(localStorage.getItem('session'));
     tablaDeVentas();
 	}
 
-    
-
-
-  
 }
 
 
@@ -188,7 +154,7 @@ function editarVenta() {
 
     $("#producto").val(ventas[venta].producto);
     $("#quantity").val(ventas[venta].quantity);
-    $("#telefono").val(ventas[venta].code);
+    $("#code").val(ventas[venta].code);
     $("#botonAgregar").click();
     $("#botonGuardar").css("display", "none");
     $("#botonEditar").css("display", "block");
@@ -199,15 +165,12 @@ function editarVenta() {
 
 function confirmarEdicion() {
 
-
-
     validarProducto();
 
     var OK = sessionStorage.getItem("OK");
 
     if (OK == "ok") {
         var index = sessionStorage.getItem("ventaEditado");
-
 
         validarProducto()
 
@@ -218,16 +181,11 @@ function confirmarEdicion() {
 
         var ventas = JSON.parse(localStorage.getItem('session'));
 
-
         ventas.splice(index, 1, venta);
 
         localStorage.setItem('session', JSON.stringify(ventas));
 
-
         tablaDeVentas();
-
-
-
 
     }
 
@@ -262,7 +220,6 @@ function paginarTabla() {
         bodyTable.innerHTML += "<tr id=" + i + "><th>" + (i + 1) + "</th><th>" + table[i].producto + "</th><th>" + table[i].quantity + "</th><th>" + table[i].code + "</th><th><i data-editar=" + i + " id='pencil' class='fa fa-pencil-square-o' onclick = 'editarUsuario()'></i></th><th><i data-borrar=" + i + " id='trash' class='fa fa-trash-o' onclick = 'borrarUsuario()'></i></th></tr>";
 
     }
-
 
 }
 
