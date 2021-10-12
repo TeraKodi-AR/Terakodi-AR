@@ -145,6 +145,7 @@ table{
 }
 
 ul{
+	box-shadow: 5px;
 	text-decoration: none;
 	list-style: none;	
 	margin-top: 2%;
