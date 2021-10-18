@@ -2,34 +2,32 @@
 <html lang="es">
    <head>
       <meta charset="UTF-8">
-      <title>Gestion de Usuarios</title>
+      <title>Gestion de Productos</title>
       <link rel="shortcut icon" href="./assets/img/img11.png" type="image/x-icon" />
 
       <!-- Aca estan los archivos CSS -->
 
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> 
-      <link rel="stylesheet" href="./assets/css/tabla.css">
+      <link rel="stylesheet" href="./assets/css/productos.css">
       
       <!-- Aca estan los archivos JS-->
 
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
-      <script type="text/javascript" src="./assets/js/tabla.js"></script>
+      <script type="text/javascript" src="./assets/js/productos.js"></script>
       
    </head>
    <body onload="tablaDeUsuarios()">
       <header>
          <h1>
-            Gestion de Usuarios
+            TABLA DE PRODUCTOS
          </h1>
        </header>
-       <div class="buscar">
-          <input type="text" placeholder="Buscar" required>
-          <div class="btnbuscar">
-             
-          </div>
+       <form action="">
+				<input type="text" class="barra-busqueda" id="searchTerm" placeholder="Buscar" onkeyup="doSearch()">
+			</form>
        </div>
       <div class="container">
          <!-- Modal -->
@@ -45,44 +43,35 @@
                   <div class="modal-body">
                      <form>
                         <div class="form-group">
-                           <label for="nombre" class="col-form-label">Nombre</label>
+                           <form action="" method="post">
+                              <input type="file" name="file" id="seleccionArchivos" accept=".jpg,.png,.jpeg">
+                              <!--Previsualizacion-->
+                              <div id="preview" class="styleImage"></div>
+                              <!-- //mejores -->
+                             
+                          </form>
+                        </div>
+                        <div class="form-group">
+                           <label for="nombre" class="col-form-label">Producto</label>
                            <input type="text" class="form-control" id="nombre">
                         </div>
                         <div class="form-group">
-                           <label for="Fecha" class="col-form-label">Fecha de nacimiento:</label>
-                           <input class="form-control" id="fecha" type="date" step="1" value="">
+                           <label for="descripcion" class="col-form-label">Descripcion</label>
+                           <input type="text" class="form-control" id="descripcion">
                         </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                           <input type="radio" id="Femenino" name="sexo" class="custom-control-input" value="Femenino">
-                           <label class="custom-control-label" for="Femenino">Femenino</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                           <input type="radio" id="Masculino" name="sexo" class="custom-control-input" value="Masculino">
-                           <label class="custom-control-label" for="Masculino">Masculino
-                           </label>
-                        </div>
+                        
                         <div class="form-group">
-                           <label for="exampleInputEmail1" id="labelMail">Email</label>
-                           <input type="email" class="form-control" id="mail" aria-describedby="emailHelp" placeholder="Enter email">
-                        </div>
-                        <div class="form-group">
-                           <label for="telefono" class="col-form-label">Telefono</label>
+                           <label for="telefono" class="col-form-label">Valor</label>
                            <input type="number" class="form-control" id="telefono">
                         </div>
-                        <div class="form-group">
-                           <select name="OS" id="rol">
-                              <option value="Vendedor">Vendedor</option> 
-                              <option value="Consumidor">Consumidor</option> 
-                              <option value="Administrador">Administrador</option> 
-                           </select>
+                     
+                        <div class="custom-control custom-radio custom-control-inline">
+                           <input type="radio" id="estado1" name="estado" class="custom-control-input" value="Disponible">
+                           <label class="custom-control-label" for="estado1">Disponible</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
-                           <input type="radio" id="estado1" name="estado" class="custom-control-input" value="Activo">
-                           <label class="custom-control-label" for="estado1">Activo</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                           <input type="radio" id="estado2" name="estado" class="custom-control-input" value="Inactivo">
-                           <label class="custom-control-label" for="estado2">Inactivo
+                           <input type="radio" id="estado2" name="estado" class="custom-control-input" value="No Disponible">
+                           <label class="custom-control-label" for="estado2">No Disponible
                            </label>
                         </div>
                      </form>
@@ -102,15 +91,15 @@
             <thead class="thead">
                <tr>
                   <th scope="col">ID</th>
-                  <th scope="col">NOMBRE</th>
-                  <th scope="col">EDAD</th>
-                  <th scope="col">SEXO</th>
-                  <th scope="col">EMAIL</th>
-                  <th scope="col">TELEFONO</th>
-                  <th scope="col">ROL</th>
+                  <th scope="col">PRODUCTO</th>
+                  <th scope="col">DESCRIPCION</th>
+                  <th scope="col">VALOR</th>
                   <th scope="col">ESTADO</th>
+                  <th scope="col">IMAGEN</th>
+                  
                </tr>
             </thead>
+            
             <tbody id="tableBody">
                
             </tbody>
@@ -124,9 +113,11 @@
                <button class="page-item" id="nextPag" onclick="nextPage()" >></button>
             </div>
             <button type="button" id="botonAgregar" onclick=" document.getElementById('error').innerHTML = ' '"  class="btn btn-success" data-toggle="modal" data-target="#ingresarUsuario">
-            CARGAR USUARIO
+            AGREGAR PRODUCTO
             </button>
          </div>
       </div>
+      
+      
    </body>
 </html>
